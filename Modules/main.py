@@ -37,6 +37,7 @@ print(dir(platform))
 
 # print(os.path.exists(path))
 
+
 '''
 if  os.path.exists(path):
     print(f"path exist\nCongrats")

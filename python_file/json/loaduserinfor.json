@@ -1,0 +1,15 @@
+{
+    "Name": {
+        "First_Name": "Bello",
+        "LastName": "koji",
+        "Middle_name": "",
+        "is_male": true
+    },
+    "Skills": [
+        "Python",
+        "Terraform",
+        "cdk",
+        "java script",
+        "htmlAnsible"
+    ]
+}
