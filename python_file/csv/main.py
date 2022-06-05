@@ -1,4 +1,6 @@
+from calendar import c
 import csv
+import time
 from pprint import pprint
 
 '''
@@ -6,12 +8,52 @@ Working with csv, (comma sep, value)
 
 First_name, last_name. data_of_birth
 '''
-req_file = input("PLEASE ENTER FILE PATH: ")
 
-# Opening csv in a write mode. 
+'''
+req_file = input("Enter file name: ")
 
-with open(req_file, 'w') as file:
+with open(req_file, 'r') as file:
+    data = csv.reader(file)
+    for each_file in data:
+        print(each_file)
+'''
+
+# How to create and write to a csv file using python.
+'''
+header = ['name', 'area', 'country_code2', 'country_code3']
+data = [
+    ['Albania', '28748', 'AL', 'ALB'],
+    ['Algeria', '2381741', 'DZ', 'DZA'],
+    ['American Samoa', '199', 'AS', 'ASM']
+]
+
+with open("address.csv", "w") as file:
     csv_writer = csv.writer(file)
-    csv_writer.writerow(["INSTANCE_ID", "STATUS", "ARN"])
-    csv_writer.writerow(["TuesDay-10-05-2022", "Introduction/Installation of Terraform", "https://drive.google.com/file/d/1i9piQ_9AhRZO38Dayy5LX606PHSzusv7/view?usp=sharing"])
-    csv_writer.writerow(["ThursDay-12-05-2022", "First Terraform Init, terraform plan, and terraform apply", "https://drive.google.com/file/d/1f97bfuoZQsLZmnNntdnG0mdEPdKIjOCI/view"])
+    # we have to write those data in a csv file
+    #print(dir(csv_writer))
+    # writerow  is just to write one list 
+    csv_writer.writerow(header)
+
+    # write multiple rows we use writerows
+
+    csv_writer.writerows(data)
+
+'''    
+
+header = ['name', 'area', 'country_code2', 'country_code3']
+data = [
+    {"name": "Alabama", "area": 25678, "country_code2": "alb", "country_code3": "ABSHD"},
+    {'name': 'Algeria', 'area': 2381741, 'country_code2': 'DZ','country_code3': 'DZA'},
+    {'name': 'American Samoa', 'area': 199, 'country_code2': 'AS','country_code3': 'ASM'}
+]
+
+with open("address2.csv", "w") as file:
+    # pprint(dir(csv))
+    # 
+    writer_csv = csv.DictWriter(file, fieldnames=header)
+    # pprint(dir(writer_csv))
+    writer_csv.writeheader()
+
+    writer_csv.writerows(data)
+
+#      
