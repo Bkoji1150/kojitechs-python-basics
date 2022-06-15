@@ -18,7 +18,7 @@ def send_text(name):
     return f"hello {name} you payment is due!"
     
 
-message = send_text("Baca")    
+   
 
 
 # Print function
@@ -28,3 +28,8 @@ def send_text(name):
     return None
     
 send_text("baca")
+
+def increment(number, by):
+    return number + by
+
+print(increment(1, by=4))  
