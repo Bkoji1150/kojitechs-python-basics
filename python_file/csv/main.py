@@ -19,7 +19,7 @@ with open(req_file, 'r') as file:
 '''
 
 # How to create and write to a csv file using python.
-'''
+
 header = ['name', 'area', 'country_code2', 'country_code3']
 data = [
     ['Albania', '28748', 'AL', 'ALB'],
@@ -37,14 +37,25 @@ with open("address.csv", "w") as file:
     # write multiple rows we use writerows
 
     csv_writer.writerows(data)
-
-'''    
+ 
 
 header = ['name', 'area', 'country_code2', 'country_code3']
 data = [
-    {"name": "Alabama", "area": 25678, "country_code2": "alb", "country_code3": "ABSHD"},
-    {'name': 'Algeria', 'area': 2381741, 'country_code2': 'DZ','country_code3': 'DZA'},
-    {'name': 'American Samoa', 'area': 199, 'country_code2': 'AS','country_code3': 'ASM'}
+    {"town": "Alabama",
+     "area": 25678, 
+     "country_code2": "alb", 
+     "country_code3": "ABSHD"
+     },
+    {'town': 'Algeria', 
+    'area': 2381741, 
+    'country_code2': 'DZ',
+    'country_code3': 'DZA'
+    },
+    {'town': 'American Samoa', 
+    'area': 199,
+    'country_code2': 'AS',
+    'country_code3': 'ASM'
+    }
 ]
 
 with open("address2.csv", "w") as file:
